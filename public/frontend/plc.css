@@ -1,0 +1,108 @@
+/*-----------------------------------------------------------------------------------
+
+    Author: Neher Halder
+    Version: 1.0
+
+-----------------------------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+.uc {
+	text-transform: uppercase;
+}
+
+.pr-5{
+	padding-right: 5px;
+}
+
+.about-area-plc {
+	background-size: 100% 100%;
+}
+
+
+.pt-8{
+	padding-top: 8px;
+}
+
+.pb-8{
+	padding-bottom: 8px;
+}
+
+.p-10 {
+	padding: 10px;
+}
+
+.primary-color {
+	color: #f3c30b;
+}
+
+.form-container:after {
+    background: rgb(51, 193, 219) none repeat scroll 0 0;
+}
+
+.section-padding {padding: 60px 0}
+.course-area .section-title-wrapper {
+    margin-bottom: 60px;
+}
+
+.about-area {
+    margin-top: 90px;
+}
+
+.button-large.button-default {
+    margin-top: 60px;
+}
+
+
+/* Course Card */
+
+.course-card {
+  border-radius: 10px;
+  background-color: #fff;
+  margin-right: 15px;
+  margin-left: 0;
+  min-height: 360px;
+  position: relative;
+  border: 1px solid #e6ecef;
+  transition: all .5s ease;
+  box-shadow: 0px 0px 6px #ccc;
+  overflow: hidden;
+}
+
+.course-card-button {
+	color: #00b5de;
+	font-size: 14px;
+	margin-top:5%;
+	border: 1px solid #00b5de;
+	border-radius: 3px;
+	padding: 6px 12px 7px 11px;
+}
+
+.color-gra1 {
+	background-image: radial-gradient(circle at 28% 36%,#ff9195,#ff5d63);
+	padding: 5px;
+}
+
+.color-gra2 {
+	background-image: radial-gradient(circle at 28% 36%,#00c5e3,#0099c3);
+	padding: 5px;
+}
+
+.color-gra3 {
+	background-image: radial-gradient(circle at 28% 36%,#f4c652,#d2ac00);
+	padding: 5px;
+}
+
+.color-gra4 {
+	background-image: radial-gradient(circle at 28% 36%,#00dcc3,#00bba6);
+	padding: 5px;
+}
+
+#grad1 {
+  padding: 170px 0px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, red, green); /* Standard syntax (must be last) */
+  color: #fff;
+}
+
