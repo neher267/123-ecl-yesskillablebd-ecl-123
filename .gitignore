@@ -5,6 +5,7 @@
 /vendor
 .env
 composer.lock
+package-lick.json
 yarn.lock
 .phpunit.result.cache
 Homestead.json

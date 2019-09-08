@@ -12,10 +12,16 @@
                         <nav>
                             <ul id="nav" style="font-weight: bold;">                                
                                 <li class="current"><a href="{{ url('/') }}">HOME</a></li>
-                                <li><a href="{{ url('about') }}">ABOUT US</a></li>
+                                <!-- <li><a href="{{ url('about') }}">ABOUT US</a></li> -->
                                 <li><a href="{{ url('how-it-works') }}">HOW IT WORKS</a></li>
                                 <li><a href="{{ url('placements') }}">PLACEMENTS </a></li>
                                 <li><a href="{{ url('courses') }}">COURSES</a></li> 
+                                <li><a href="#" style="color: #28bba5; font-weight: bold; font-size: 14px;">study in abroad</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ url('study-in-abrode/usa') }}">USA</a></li>
+                                        <li><a href="{{ url('study-in-abrode/germany') }}">Germany</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="{{ url('success-case') }}">Success Case </a></li>   
                                 <li><a href="{{ url('corporate-training') }}">CORPORATE TRAINING</a></li>
                                 <li><a href="{{ url('contact') }}">Contact</a></li>
@@ -57,6 +63,12 @@
                             <li><a href="{{ url('how-it-works') }}">HOW IT WORKS</a></li>
                             <li><a href="{{ url('placements') }}">PLACEMENTS </a></li>
                             <li><a href="{{ url('courses') }}">COURSES</a></li> 
+                            <li><a href="#" style="color: #28bba5; font-weight: bold; font-size: 14px;">study in abroad</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ url('study-in-abrode/usa') }}">USA</a></li>
+                                        <li><a href="{{ url('study-in-abrode/germany') }}">Germany</a></li>
+                                    </ul>
+                                </li>
                             <li><a href="{{ url('success-case') }}">Success Case </a></li>   
                             <li><a href="{{ url('corporate-training') }}">CORPORATE TRAINING</a></li>
                             <li><a href="{{ url('contact') }}">Contact</a></li>

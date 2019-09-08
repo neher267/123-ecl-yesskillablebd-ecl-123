@@ -96,6 +96,8 @@ Route::group(['namespace' => 'Frontend'], function() {
 	Route::get('news/{news}', 'NewsController@show')->name('news-details');
 
 	Route::get('contact', 'ContactsController@index');
+
+	Route::get('study-in-abrode/{country}', 'StudyInAbrodeController@show');
 });
 
 
