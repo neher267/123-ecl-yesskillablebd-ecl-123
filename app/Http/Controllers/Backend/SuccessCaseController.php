@@ -47,7 +47,7 @@ class SuccessCaseController extends Controller
     public function store(Request $request)
     {
     	//dd($request->all());
-	$request->validate(['image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']);
+	$request->validate(['image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:250']);
 	$successCaseName = time().'.'.$request->image->getClientOriginalExtension();
 	$request->image->move(public_path($this->image_path), $successCaseName);
 

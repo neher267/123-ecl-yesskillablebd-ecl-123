@@ -26,9 +26,12 @@
 
                     <!-- Super Admin     -->
                                      
-                    @if(Auth::user()->role == 1)
+                    @if(Auth::user()->role == 1 || Auth::user()->role == 2)
                     <li><a href="{{route('inquries.index')}}"><i class="fa fa-angellist"></i>End User Inquiries</a></li>
                     <li><a href="{{route('success-case.index')}}"><i class="fa fa-angellist"></i> Success case</a></li>
+                    @endif
+
+                    @if(Auth::user()->role == 1)
                     <li><a href="{{route('students.index')}}"><i class="fa fa-users"></i> Registerd Students</a></li>
                     <li><a href="{{route('student-infos.index')}}"><i class="fa fa-users"></i> Student Registration Inquiry</a></li>
                     @endif

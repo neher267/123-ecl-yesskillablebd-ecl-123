@@ -20,7 +20,6 @@
                             <th>Sr.No</th>
                             <th>Image</th>
                             <th>Title</th>
-                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
