@@ -112,6 +112,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="special">Is Special<span class="required">*</span>
+                        </label>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <select id="special" name="special" required="required" class="form-control col-md-7 col-xs-12">
+                                <option value="">Select</option>
+                                <option value="1" {{$result->special == 1 ? "selected":""}}>Yes</option>
+                                <option value="0" {{$result->special == 0 ? "selected":""}}>No</option>                                                               
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="summary">Course Summary<span class="required">*</span>
                         </label>
                         
@@ -124,19 +136,32 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="about">About Course <span class="required">*</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
-                            <textarea name="about" id="about">{{$result->about}}</textarea>
+                            <textarea name="about" id="about" class="form-control col-md-9 col-xs-12">{{$result->about}}</textarea>
                         </div>
                     </div>
-
-                    <!-- <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="learning">WHAT WILL YOU LEARN?<span class="required">*</span>
+                    
+                    @if($result->special)                    
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="learning">Key Points<span class="required">*</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <textarea name="learning" id="learning">{{$result->learning}}</textarea>
                         </div>
-                    </div>                    
+                    </div> 
 
                     <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="background">Banner Image<span class="required">*</span>
+                        </label>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            @if(!empty($result->background))
+                            <img src="{{asset($result->background)}}" style="margin: 15px 0px; height: 200px;">
+                            @endif
+                            <input type="file" id="background" name="background"  class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    @endif              
+
+                   <!--  <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="job_opp">JOB OPPORTUNITIES<span class="required">*</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
@@ -195,7 +220,7 @@
 
 <script>
     CKEDITOR.replace('about');
-    // CKEDITOR.replace('learning');
+    CKEDITOR.replace('learning');
     // CKEDITOR.replace('enroll');
     // CKEDITOR.replace('job_opp');
 </script>

@@ -24,7 +24,7 @@ class CoursesController extends Controller
     {
         $title = "Popular Courses";
         $categories = Category::orderBy('name')->get();
-        $courses = Course::filter($filters)->where('status', 1)->orderBy('order')->paginate(8);
+        $courses = Course::filter($filters)->where('status', 1)->orderBy('order')->get();
         return view($this->viewPath.'courses', compact('title', 'categories', 'courses'));
     }
 
@@ -34,6 +34,11 @@ class CoursesController extends Controller
     public function show(Course $course)
     {
         $title = "Course Details";
+
+        if($course->special == 1) {
+            return view($this->viewPath.'special-course-details', compact('title', 'course'));
+        }
+
         $categories = Category::orderBy('name')->get();
         $related = $course->category->courses()->where('status', 1)
                     ->where('id', '!=', $course->id)->limit(2)->get();

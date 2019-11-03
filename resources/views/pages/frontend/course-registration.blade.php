@@ -34,10 +34,7 @@
                             <select class="form-control" name="course_id" required>
                                 <option value="">Select a course</option>
                                 @foreach($courses as $course)
-                                <option 
-                                    value="{{$course->id}}" 
-                                    {{$selected_course->id == $course->id ? 'selected':''}}
-                                    >
+                                <option value="{{$course->id}}" <?php echo $selected_course->id == $course->id ? 'selected':'' ?>>
                                     {{$course->name}}
                                 </option>
                                 @endforeach

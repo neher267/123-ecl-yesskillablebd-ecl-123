@@ -15,7 +15,13 @@
                                 <li><a href="{{ url('about') }}">ABOUT US</a></li>
                                 <li><a href="{{ url('how-it-works') }}">HOW IT WORKS</a></li>
                                 <li><a href="{{ url('placements') }}">PLACEMENTS </a></li>
-                                <li><a href="{{ url('courses') }}">COURSES</a></li> 
+                                <li><a href="{{ url('courses') }}">COURSES</a>
+                                    <ul class="sub-menu">
+                                        @foreach($special_courses as $special_course)
+                                        <li><a href="{{ url('courses/'.$special_course->slug) }}">{{$special_course->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                                 <li><a href="#" style="color: #28bba5; font-weight: bold; font-size: 14px;">study in abroad</a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ url('study-in-abrode/usa') }}">USA</a></li>
@@ -67,7 +73,11 @@
                             <li><a href="{{ url('about') }}">ABOUT US</a></li>
                             <li><a href="{{ url('how-it-works') }}">HOW IT WORKS</a></li>
                             <li><a href="{{ url('placements') }}">PLACEMENTS </a></li>
-                            <li><a href="{{ url('courses') }}">COURSES</a></li> 
+                            <li><a href="{{ url('courses') }}">COURSES</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ url('courses/bim') }}">BIM</a></li>
+                                </ul>
+                            </li> 
                             <li><a href="#" style="color: #28bba5; font-weight: bold; font-size: 14px;">study in abroad</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ url('study-in-abrode/usa') }}">USA</a></li>

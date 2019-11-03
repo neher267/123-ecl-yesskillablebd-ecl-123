@@ -120,6 +120,7 @@ class CourseController extends Controller
     public function update(Request $request, Course $course)
     {
         $data = $course;
+        // dd($course);
         $data->name = $request->name;
         $data->order = $request->order;
         $data->status = $request->status;
@@ -127,8 +128,9 @@ class CourseController extends Controller
         // $data->title = $request->title;
         $data->hands_on = (bool)$request->hands_on;
         $data->summary = $request->summary;
+        $data->special = $request->special;
         $data->about = $request->about;
-        // $data->learning = $request->learning;
+        $data->learning = $request->learning;
         // $data->enroll = $request->enroll;
         // $data->job_opp = $request->job_opp;
         $data->duration = $request->duration;
@@ -142,19 +144,21 @@ class CourseController extends Controller
             $data->thumnail = $this->image_path.'/'.$imageName;       
         }
 
-        // if(!empty($request->background)){
-        //     $request->validate(['background' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']); 
-        //     $this->delete($course->background);            
-        //     $imageName = time().'background.'.$request->background->getClientOriginalExtension();
-        //     $request->background->move(public_path($this->image_path), $imageName);
-        //     $data->background = $this->image_path.'/'.$imageName;       
-        // }if(!empty($request->referance)){
+        if(!empty($request->background)){
+            $request->validate(['background' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']); 
+            $this->delete($course->background);            
+            $imageName = time().'background.'.$request->background->getClientOriginalExtension();
+            $request->background->move(public_path($this->image_path), $imageName);
+            $data->background = $this->image_path.'/'.$imageName;       
+        }
+        //if(!empty($request->referance)){
         //     $request->validate(['referance' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']);   
         //     $this->delete($course->referance);
         //     $imageName = time().'referance.'.$request->referance->getClientOriginalExtension();
         //     $request->referance->move(public_path($this->image_path), $imageName);
         //     $data->referance = $this->image_path.'/'.$imageName;       
         // }
+
         $data->save();
 
         return redirect('dashboard/courses')->withSuccess("Update Success!");

@@ -89,14 +89,7 @@
             @endforeach  
             <div class="clearfix"></div>        
         </div>
-        @endforeach 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pagination-content">
-                    {{ $courses->links() }}
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!--End of Course Area-->
