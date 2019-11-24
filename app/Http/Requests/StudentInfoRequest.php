@@ -27,7 +27,7 @@ class StudentInfoRequest extends FormRequest
             'name' => 'required|max:50',
             'mobile' => 'required|max:14|min:11|unique:student_infos',
             'email' => 'nullable|email|max:50',
-            'location' => 'required|string|max: 100',
+            'location' => 'nullable|string|max: 100',
             'current_institute' => 'required|string|max:191',
             'qualifications' => 'required|string|min:10',
         ];

@@ -101,8 +101,8 @@ html {
 
 #grad1 {
   padding: 170px 0px;
-  background-color: red; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, red, green); /* Standard syntax (must be last) */
+  background-color: #39c0dd; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, #39c0dd, #e67e22); /* Standard syntax (must be last) */
   color: #fff;
 }
 
@@ -110,3 +110,28 @@ html {
     width: 85%;
 }
 
+.header-top:before, .about-area:before, .newsletter-area:before {
+    content: "";
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 18px;
+    width: 43%;
+}
+
+.header-top:after, .about-area:after, .newsletter-area:after {
+    border-width: 16px 16px;
+    top: 18px;
+}
+
+
+
+
+
+/*.header-top{
+    background: #39c0dd none repeat scroll 0 0;
+}
+
+.footer-widget-area {
+    background: #39c0dd none repeat scroll 0 0;
+}*/

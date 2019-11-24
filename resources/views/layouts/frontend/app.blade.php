@@ -95,7 +95,11 @@
         <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-five.css') }}" title="color-five" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-six.css') }}" title="color-six" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-seven.css') }}" title="color-seven" media="screen" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-eight.css') }}" title="color-eight" media="screen" />
+        <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-eight.css') }}" title="color-eight" media="screen" />
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-custom.css') }}" title="color-eight" media="screen" />
+
+
         <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-nine.css') }}" title="color-nine" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/color-ten.css') }}" title="color-ten" media="screen" />        
         <link rel="alternate stylesheet" type="text/css" href="{{ asset('frontend/switcher/pattren1.css') }}" title="pattren1" media="screen" />

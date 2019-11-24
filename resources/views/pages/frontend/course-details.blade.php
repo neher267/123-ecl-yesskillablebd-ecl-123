@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.frontend.partials._breadcrumb', ['image'=>'other-bc.jpg'])
+
 <div class="course-details-area section-padding">
     <div class="container">
         <div class="row">

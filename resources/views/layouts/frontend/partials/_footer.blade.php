@@ -2,55 +2,9 @@
 <div class="footer-widget-area">
     <div class="container">
         <div class="row">
-
             <div class="col-md-3 col-sm-4">
-                <div class="single-footer-widget">
-                    <div class="footer-logo" style="margin-bottom: 0px;">
-                        <a href="{{ url('/') }}">
-                            <img style="position: relative; top: -15px; height: 55px; padding-left: 5px;" src="{{ asset('frontend/img/logo/footer.png') }}" alt="">
-                        </a>
-                    </div>
-                    <p style="position: relative; top: -5px;">
-                        Skill & Able is the fast growing Skilling Organization operating in the space of Skilling, Re-skilling and Up-skilling fresher’s and working professionals.
-                        Skill & Able provides you with ready-to-work, high-quality training program with Placement in leading companies. Our Training programs are interactive, practical and easily understandable but at the same time intensive and comprehensive.
-                    </p>
-                    <div class="social-icons">
-                        <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                        <a href="#"><i class="zmdi zmdi-rss"></i></a>
-                        <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 hidden-sm">
                 <div class="single-footer-widget" style="padding-left: 25px;">
-                    <h3>Useful Links</h3>
-                    <ul class="footer-list">
-                        <li><a href="{{ url('about') }}">About Us</a></li>                      
-                        <li><a href="{{ url('how-it-works') }}">How It Works</a></li>  
-                        <li><a href="{{ url('placements') }}">Placements </a></li>    
-                        <li><a href="{{ url('success-case') }}">Success Case </a></li>    
-                        <li><a href="{{ url('corporate-training') }}">Corporate Training</a></li>
-                        <li><a href="{{ url('courses') }}">Courses</a></li>
-                        <li><a href="{{ url('contact') }}">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="col-md-3 col-sm-4">
-                <div class="single-footer-widget">
-                    <h3 class="text-center">QR Code</h3>
-
-                    <div class="footer-logo">
-                        <img src="{{ asset('images/qr-code-skillnable.png') }}">
-                    </div>  
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-4">
-                <div class="single-footer-widget">
-                    <h3 class="text-center" style="padding-right: 44px;">Contact</h3>
+                    <h3>Contact</h3>
                     <span style="margin-top: -7px;">
                         <i class="fa fa-map-marker"></i>
                         <span>House-278(2nd Floor), Road-19</span><br/>
@@ -79,6 +33,25 @@
                         </a>
                     </span>
                                       
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.959976776569!2d90.39227880062207!3d23.784439513345884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c74027c732b3%3A0xb617320d5845616b!2sECL+Systems+LTD!5e0!3m2!1sen!2sbd!4v1530084243163" width="100%" height="226" frameborder="" style="border:0" allowfullscreen></iframe>
+            </div>
+            <!-- hidden-xs -->
+            <div class="col-md-3">
+                <div class="single-footer-widget" style="padding-left: 25px;">
+                    <h3>Useful Links</h3>
+                    <ul class="footer-list">
+                        <li><a href="{{ url('about') }}">About Us</a></li>                      
+                        <li><a href="{{ url('how-it-works') }}">How It Works</a></li>  
+                        <li><a href="{{ url('placements') }}">Placements </a></li>    
+                        <li><a href="{{ url('success-case') }}">Success Case </a></li>    
+                        <li><a href="{{ url('corporate-training') }}">Corporate Training</a></li>
+                        <li><a href="{{ url('courses') }}">Courses</a></li>
+                        <li><a href="{{ url('contact') }}">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

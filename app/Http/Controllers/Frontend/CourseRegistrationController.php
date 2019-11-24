@@ -22,7 +22,7 @@ class CourseRegistrationController extends Controller
         //dd($request->all());
     	$data = new StudentInfo;
         $data->name = $request->name;
-        $data->course_id = $request->course_id;
+        $data->course_id = 1;
         $data->mobile = $request->mobile;
         $data->email = $request->email;
         $data->location = $request->location;
