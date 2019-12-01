@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $special_courses = Course::where('special', 1)->where('status', 1)->orderBy('name')->get();
+        $special_courses = Course::where('special', 1)->where('slug', 'bim')->where('status', 1)->orderBy('name')->get();
         View::share('special_courses', $special_courses);
     }
 }

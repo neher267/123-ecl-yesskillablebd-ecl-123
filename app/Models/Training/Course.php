@@ -37,7 +37,8 @@ class Course extends Model
         return static::where('status', 1)->orderBy('order')->limit(4)->get();
     }
 
-
-
+    public function chieldCourses() {
+        return $this->hasMany(Course::class, 'parent_id');
+    }
     
 }

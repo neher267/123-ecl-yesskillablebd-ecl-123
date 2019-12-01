@@ -122,6 +122,22 @@
                             </select>
                         </div>
                     </div>
+                    
+                    @if($result->special == 1)
+                    <div class="form-group">
+                        <label for="course_ids" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Select Chield Courses
+                        </label>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <select id="course_ids" multiple class="form-control col-md-7 col-xs-12" name="course_ids[]" required>
+                                <option value="">Select</option>
+                                @foreach($courses as $course)
+                                <option value="{{$course->id}}" {{ $course->parent_id == $result->id ? 'selected':'' }}>{{ $course->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>                        
+                    </div>
+                    @endif
 
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="summary">Course Summary<span class="required">*</span>

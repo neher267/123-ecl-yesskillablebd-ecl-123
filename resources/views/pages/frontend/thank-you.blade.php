@@ -14,7 +14,7 @@
                    <p class="text-center">In the meantime, feel free to continue exploring our site.</p>
 
                    <div style="margin: auto; width: 235px; margin-top: 20px;">                   	
-                   		<a href="{{ url('/') }}" class="btn btn-default" style="color: #5d5100;">Continue Exploring Medientry</a>
+                   		<a href="{{ url('/') }}" class="btn btn-default" style="color: #5d5100;">Continue Exploring Skill & Able</a>
                    </div>
             </div>            
         </div>

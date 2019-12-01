@@ -22,7 +22,7 @@ class CourseRegistrationController extends Controller
         //dd($request->all());
     	$data = new StudentInfo;
         $data->name = $request->name;
-        $data->course_id = 1;
+        $data->course_id = $request->course_id;
         $data->mobile = $request->mobile;
         $data->email = $request->email;
         $data->location = $request->location;
@@ -31,7 +31,7 @@ class CourseRegistrationController extends Controller
         $data->created_by = 1;
         $data->save();
 
-        return redirect('thank-you');
+        return redirect('thanks');
     }
 
     public function thankyou()

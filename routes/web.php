@@ -83,6 +83,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 	Route::get('course-registration/{course}', 'CourseRegistrationController@create')->name('course-registration');
 	Route::post('course-registration', 'CourseRegistrationController@store');
 	Route::get('thank-you', 'CourseRegistrationController@thankyou');
+	Route::get('thanks', 'CourseRegistrationController@thankyou');
 
 	Route::post('inquries', 'InquriesController@store');
 
@@ -165,7 +166,12 @@ Route::group(['prefix'=>'dashboard', 'namespace'=>'Backend', 'middleware'=>['aut
 
 	//end billing
 	Route::get('inquries', 'InquiriesController@index')->name('inquries.index');
+	// Route::get('inquries/{inquiry}', 'InquiriesController@show')->name('inquries.show');
+	// Route::DELETE('inquries/{inquiry}', 'InquiriesController@destroy')->name('inquries.destroy');
+
 	Route::get('inquries/{inquiry}', 'InquiriesController@show')->name('inquries.show');
+	Route::post('inquries/{inquiry}/change-status', 'InquiriesController@change_status')->name('inquries.change.status');
+	Route::post('inquries/filter', 'InquiriesController@filter')->name('inquries.filter');
 	Route::DELETE('inquries/{inquiry}', 'InquiriesController@destroy')->name('inquries.destroy');
 
 	Route::get('product-inquiryes', 'InquiryController@productInquries');

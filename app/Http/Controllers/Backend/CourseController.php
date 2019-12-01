@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Training\Course;
 use App\Models\Training\Category;
@@ -90,8 +91,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //dd($course);
-        
+        //dd($course);        
         return back();
     }
 
@@ -106,8 +106,9 @@ class CourseController extends Controller
         $result = $course;
         $page_title = $course->name.": Edit";
         $name = $this->route_name;
+        $courses = Course::where('id', '!=', $course->id)->where('status', 1)->orderBy('parent_id', 'desc')->orderBy('name')->get();
         $categories = Category::orderBy('name', 'asc')->get();
-        return view($this->path.'edit', compact('page_title', 'result', 'name', 'categories'));
+        return view($this->path.'edit', compact('page_title', 'result', 'name', 'categories', 'courses'));
     }
 
     /**
@@ -120,7 +121,7 @@ class CourseController extends Controller
     public function update(Request $request, Course $course)
     {
         $data = $course;
-        // dd($course);
+        // dd($request->all());
         $data->name = $request->name;
         $data->order = $request->order;
         $data->status = $request->status;
@@ -135,7 +136,13 @@ class CourseController extends Controller
         // $data->job_opp = $request->job_opp;
         $data->duration = $request->duration;
         $data->fee = $request->fee;
-        
+
+        foreach ($request->course_ids as $id) {
+            $chield = Course::findOrFail($id);
+            $chield->parent_id = $course->id;
+            $chield->save();
+        }        
+
         if(!empty($request->thumnail)){
             $request->validate(['thumnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:400']); 
             $this->delete($course->thumnail);     

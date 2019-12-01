@@ -35,8 +35,9 @@ class CoursesController extends Controller
     {
         $title = "Course Details";
 
-        if($course->special == 1) {
-            return view($this->viewPath.'special-course-details', compact('title', 'course'));
+        if($course->special == 1 && $course->slug == 'bim') {
+            $courses = $course->chieldCourses()->orderBy('name')->get();
+            return view($this->viewPath.'special-course-details', compact('title', 'course', 'courses'));
         }
 
         $categories = Category::orderBy('name')->get();

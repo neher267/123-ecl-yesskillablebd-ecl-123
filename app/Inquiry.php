@@ -3,13 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Training\Course;
 
 class Inquiry extends Model
 {
-    protected $fillable = ['name', 'product_id', 'designation', 'email','company','mobile','message','file'];
+    protected $fillable = ['name', 'course_id', 'chield_ids', 'designation', 'email', 'current_institute', 'qualifications', 'mobile', 'message'];
 
-    public function product()
+    public function course()
     {
-    	return $this->belongsTo(Product::class);
+    	return $this->belongsTo(Course::class);
     }
 }

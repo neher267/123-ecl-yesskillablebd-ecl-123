@@ -24,6 +24,38 @@
                         <td>{{$inquiry->mobile}}</td>
                     </tr>
 
+
+
+                    @if($inquiry->course_id)
+                    <tr>
+                        <th>Course</th>
+                        <td>{{$inquiry->course->name}}</td>
+                    </tr>
+                    @endif
+
+                    <?php 
+                        $chield_ids = explode(',', $inquiry->chield_ids);
+                    ?>                    
+                    @if($inquiry->course_id)
+                    <tr>
+                        <th>Apply For</th>
+                        <td>
+                            @foreach($chield_ids as $chield)
+                            <?php 
+                            $course = DB::table('courses')->find($chield);
+                            if ($course) {
+                                echo "<p>$course->name</p>";
+                            }
+                            ?>
+                            @endforeach
+                        </td>
+                    </tr>
+                    @endif                    
+                    <p>
+
+                        
+                    </p>
+
                     <tr>
                         <th>Message</th>
                         <td>{{$inquiry->message}}</td>

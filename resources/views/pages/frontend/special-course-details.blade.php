@@ -57,7 +57,7 @@
 
         .course-pills > ul > li a {
             padding: 4px 0;
-            width: 188px;
+            width: 160px;
             text-align: center;
         }
 
@@ -68,6 +68,11 @@
 
         .res{
             margin-bottom: 15px;
+        }
+
+        .breadcrumb-banner-area {
+            background-position: center;
+            height: auto;
         }
     }
 
@@ -117,10 +122,15 @@
 
         <div class="row">            
             <div class="col-md-12 course-pills">
-            <h2 class="text-center" style="padding: 20px 0">Training Details</h2>
+            <h2 class="text-center" style="padding: 50px 0 25px">Training Details</h2>
 
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item active">
+                @foreach($courses as $key => $tab)
+                <li class="nav-item  {{ $key == 0 ? 'active':'' }}">
+                    <a class="nav-link {{ $key == 0 ? 'active':'' }}" id="pills-tab-{{ $key}}" data-toggle="pill" href="#pills-{{ $key}}" role="tab" aria-controls="pills-home" aria-selected="{{ $key == 0 ? 'true':'false' }}">{{ $tab->name }}</a>
+                </li>
+                @endforeach
+                <!-- <li class="nav-item active">
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-home" aria-selected="true">Revit Architecture</a>
                 </li>
                 <li class="nav-item">
@@ -132,10 +142,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-contact" aria-selected="false">NavisWorks</a>
-                </li>
+                </li> -->
             </ul>
             <div class="tab-content pt-2 pl-1" id="pills-tabContent">
-                <div class="tab-pane fade active show in" id="pills-1" role="tabpanel" aria-labelledby="pills-home-tab">
+                <!-- <div class="tab-pane fade active show in" id="pills-1" role="tabpanel" aria-labelledby="pills-home-tab">
                     <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12">
                             <div class="overlay-effect">
@@ -158,10 +168,43 @@
                             <a href="#admission" class="button-default" style="display: table;">Apply For Admission</a>
                         </div>
                     </div>
+                </div> -->
+
+                @foreach($courses as $key => $tab)
+                <!-- <option value="{{ $course->name }}">{{ $course->name }}</option>
+                <li class="nav-item  {{ $key == 0 ? 'active':'' }}">
+                    <a class="nav-link {{ $key == 0 ? 'active':'' }}" id="pills-tab-{{ $key}}" data-toggle="pill" href="#pills-{{ $key}}" role="tab" aria-controls="pills-home" aria-selected="{{ $key == 0 ? 'true':'false' }}">{{ $tab->name }}</a>
+                </li> -->
+
+                <div class="tab-pane fade {{ $key == 0 ? 'active show in':'' }}" id="pills-{{ $key}}" role="tabpanel" aria-labelledby="pills-tab-{{ $key}}">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <div class="overlay-effect">
+                                <img class="img-special" src="{{ asset($tab->thumnail) }}">
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <div class="single-item-text">
+                                <h4>{{$tab->name}}</h4>
+                                <div class="single-item-text-info">
+                                    <span><span>{{$tab->hands_on ==1 ? "Hands-on Training":""}}</span></span>
+                                    <span>Duration: <span>{{(int)$tab->duration}} Hr</span></span>
+                                </div>
+                                <div class="course-text-content">
+                                    <p>
+                                        <?php echo html_entity_decode($tab->about) ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#admission" class="button-default" style="display: table;">Apply For Admission</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-profile-tab">Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</div>
+                @endforeach
+
+                <!-- <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-profile-tab">Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</div>
                 <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-contact-tab">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex.oluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</div>
-                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-contact-tab">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex.oluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</div>
+                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-contact-tab">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex.oluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</div> -->
             </div>
             </div>
         </div>
@@ -172,7 +215,7 @@
                     <h2 style="padding: 10px 0; line-height: 1.3">Apply For BIM<br/>Training Admission</h2>
                     <p>Our admission department will contact with you<br/>about the admission process.</p>
                 </div>
-                <form id="admission" action="{{url('course-registration')}}" method="post">
+                <form id="admission" action="{{url('inquries')}}" method="post" onsubmit="disableButton()">
                     @csrf @if ($errors->any())
                     <div class="form-group">
                         <div class="alert alert-danger">
@@ -185,14 +228,15 @@
                     </div>
                     @endif
                     <div class="form-group">
-                        <label for="formGroupExampleInput"><h5 style="font-size: 15px;">Select Your Course(s)</h5></label>
-
-                        <select multiple class="form-control form-style" name="course_ids[]" required>
-                            <option>1</option>
-                            <option>1</option>
-                            <option>1</option>
-                            <option>1</option>
-                        </select>
+                        <label for="course_ids">
+                            <h5 style="font-size: 15px;">Select Your Course(s)</h5>
+                        </label>
+                        <input value="{{ $course->id }}" name="course_id" type="hidden"/>                        
+                        <select id="course_ids" multiple class="form-control form-style" name="course_ids[]" required>
+                            @foreach($courses as $course)
+                            <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>                        
                     </div>
 
                     <div class="form-group">
@@ -218,12 +262,17 @@
                     </div>
 
                     <div class="form-group">
-                        <textarea name="qualifications" class="form-control form-style" placeholder="Your Qualifications" rows="4" required>{{ old('qualifications') }}</textarea>
+                        <textarea name="qualifications" class="form-control form-style" placeholder="Your Qualifications" rows="4">{{ old('qualifications') }}</textarea>
                     </div>
 
                     <div class="col-md-12 col-sm-12 text-center">
                         <input type="submit" value="Submit" class="button-default"/>
                     </div>
+                    <script type="text/javascript">
+                        function disableButton() {
+                            document.getElementById("submit").disabled = true;
+                        }
+                    </script>
                 </form>
             </div>
         </div>

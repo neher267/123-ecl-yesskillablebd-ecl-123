@@ -14,18 +14,21 @@
 
                     <span style="margin-top: -7px;"><i class="fa fa-whatsapp"></i>                        
                         <a 
-                            href="whatsapp://send?text=Hello Medientry!&phone=+8801713456910" 
+                            href="whatsapp://send?text=Hello Skill & Able!&phone=+8801713456910" 
                             style="color: #fff">
                             {{ config('plc.w-app') }}
                         </a>
                     </span>
 
                     <span style="margin-top: -7px;"><i class="fa fa-phone"></i>
-                        {{ config('plc.mobile') }}
+                        <a href="tel:{{config('plc.mobile_foraction')}}" style="font-size: 14px; color: white;">
+                            {{ config('plc.mobile') }}
+                        </a>
                     </span>
 
-                    <span style="margin-top: -7px;"><i class="zmdi zmdi-email"></i>
-                        
+
+
+                    <span style="margin-top: -7px;"><i class="zmdi zmdi-email"></i>                        
                         <a 
                             href="mailto:{{config('plc.email')}}" 
                             style="color: #fff">
@@ -65,7 +68,7 @@
             <div class="col-md-6 col-sm-7">
                 <span>Copyright &copy; {{ config('app.name') }} {{ date('Y') }}. All right reserved. Created by <a href="http://eclsystem.com/">ECL Systems Ltd</a></span>
             </div>
-            <div class="col-md-6 col-sm-5">
+            <div class="col-md-6 col-sm-5 hidden-xs">
                 <div class="column-right">
                     <span style="font-weight: bold;">
                         <a 
