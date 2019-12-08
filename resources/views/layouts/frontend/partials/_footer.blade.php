@@ -14,7 +14,7 @@
 
                     <span style="margin-top: -7px;"><i class="fa fa-whatsapp"></i>                        
                         <a 
-                            href="whatsapp://send?text=Hello Skill & Able!&phone=+8801713456910" 
+                            href="whatsapp://send?text=Hello Skill&phone=+8801713456910" 
                             style="color: #fff">
                             {{ config('plc.w-app') }}
                         </a>

@@ -1,3 +1,18 @@
+<style type="text/css">
+    @media (max-width: 767px) {
+        .about-area h3 {
+            font-size: 19px;
+            margin-bottom: 18px;
+            padding-top: 25px;
+        }
+        .about-area {
+            background: rgb(37, 63, 76);
+        }
+        .about-area p {
+            margin-bottom: 12px;
+        }
+</style>
+
 <div class="about-area about-area-plc">
     <div class="container">
         <div class="row">

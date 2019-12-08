@@ -44,6 +44,10 @@
         width: 90%;
     }
 
+    .registraton-naw {
+        padding: 10px 0; line-height: 1;
+    }
+
     @media (max-width: 767px) {
         .course-pills > ul {
             margin-right: 0;
@@ -73,6 +77,27 @@
         .breadcrumb-banner-area {
             background-position: center;
             height: auto;
+        }
+
+        .breadcrumb-text h1 {
+            font-size: 58px;
+            line-height: .85;
+        }
+
+        .apply-for-addmission {
+            width: 206px;
+            margin: auto;
+        }
+        .registration-naw {
+            font-size: 24px;
+        }
+
+        .pills-course {
+            width: 170px;
+            margin: auto;
+        }
+        .course-pills > ul {
+            margin-right: auto;
         }
     }
 
@@ -111,7 +136,7 @@
                                 </div>
                             </div> 
 
-                            <div class="col-md-12">
+                            <div class="apply-for-addmission">
                                 <a href="#admission" class="button-default">Apply For Admission</a>
                             </div>
                         </div>                          
@@ -124,58 +149,15 @@
             <div class="col-md-12 course-pills">
             <h2 class="text-center" style="padding: 50px 0 25px">Training Details</h2>
 
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-3 pills-course" id="pills-tab" role="tablist">
                 @foreach($courses as $key => $tab)
                 <li class="nav-item  {{ $key == 0 ? 'active':'' }}">
                     <a class="nav-link {{ $key == 0 ? 'active':'' }}" id="pills-tab-{{ $key}}" data-toggle="pill" href="#pills-{{ $key}}" role="tab" aria-controls="pills-home" aria-selected="{{ $key == 0 ? 'true':'false' }}">{{ $tab->name }}</a>
                 </li>
                 @endforeach
-                <!-- <li class="nav-item active">
-                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-home" aria-selected="true">Revit Architecture</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-profile" aria-selected="false">Revit MEP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-contact" aria-selected="false">Revit Structure</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-contact" aria-selected="false">NavisWorks</a>
-                </li> -->
             </ul>
             <div class="tab-content pt-2 pl-1" id="pills-tabContent">
-                <!-- <div class="tab-pane fade active show in" id="pills-1" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12">
-                            <div class="overlay-effect">
-                                <img class="img-special" src="{{ asset($course->thumnail) }}">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-7 col-xs-12">
-                            <div class="single-item-text">
-                                <h4>{{$course->name}}</h4>
-                                <div class="single-item-text-info">
-                                    <span><span>{{$course->hands_on ==1 ? "Hands-on Training":""}}</span></span>
-                                    <span>Duration: <span>{{(int)$course->duration}} Hr</span></span>
-                                </div>
-                                <div class="course-text-content">
-                                    <p>
-                                        <?php echo html_entity_decode($course->about) ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <a href="#admission" class="button-default" style="display: table;">Apply For Admission</a>
-                        </div>
-                    </div>
-                </div> -->
-
                 @foreach($courses as $key => $tab)
-                <!-- <option value="{{ $course->name }}">{{ $course->name }}</option>
-                <li class="nav-item  {{ $key == 0 ? 'active':'' }}">
-                    <a class="nav-link {{ $key == 0 ? 'active':'' }}" id="pills-tab-{{ $key}}" data-toggle="pill" href="#pills-{{ $key}}" role="tab" aria-controls="pills-home" aria-selected="{{ $key == 0 ? 'true':'false' }}">{{ $tab->name }}</a>
-                </li> -->
-
                 <div class="tab-pane fade {{ $key == 0 ? 'active show in':'' }}" id="pills-{{ $key}}" role="tabpanel" aria-labelledby="pills-tab-{{ $key}}">
                     <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12">
@@ -196,15 +178,14 @@
                                     </p>
                                 </div>
                             </div>
-                            <a href="#admission" class="button-default" style="display: table;">Apply For Admission</a>
+
+                            <div class="apply-for-addmission">
+                                <a href="#admission" class="button-default" style="display: table;">Apply For Admission</a>
+                            </div>                            
                         </div>
                     </div>
                 </div>
-                @endforeach
-
-                <!-- <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-profile-tab">Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</div>
-                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-contact-tab">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex.oluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</div>
-                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-contact-tab">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex.oluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</div> -->
+                @endforeach                
             </div>
             </div>
         </div>
@@ -212,7 +193,7 @@
         <div class="row">                            
             <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
                 <div class="col-md-12 text-center" style="padding-bottom: 15px;">
-                    <h2 style="padding: 10px 0; line-height: 1.3">Apply For BIM<br/>Training Admission</h2>
+                    <h2 class="registration-naw" >Apply For BIM<br/>Training Admission</h2>
                     <p>Our admission department will contact with you<br/>about the admission process.</p>
                 </div>
                 <form id="admission" action="{{url('inquries')}}" method="post" onsubmit="disableButton()">

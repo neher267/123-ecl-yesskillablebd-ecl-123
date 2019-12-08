@@ -1,7 +1,7 @@
 <style type="text/css">
     .breadcrumb-banner-area {
     background: rgba(0, 0, 0, 0) url(<?php echo is_object($image) ? asset($image->background):asset("frontend/img/banner/$image") ?>) no-repeat scroll 0 0;
-
+    background-size: 100% 100%;
 }
 </style>
 
