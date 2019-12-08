@@ -12,9 +12,9 @@ class CourseRegistrationController extends Controller
     public function create(Course $course)
     {
     	$selected_course = $course;
-        $courses = Course::where('status', 1)->orderBy('name','asc')->get();
+        $all_courses = Course::where('status', 1)->orderBy('name','asc')->get();
     	$title = "Course Registration";
-        return view('pages.frontend.course-registration', compact('title', 'courses', 'course', 'selected_course'));
+        return view('pages.frontend.course-registration', compact('title', 'all_courses', 'course', 'selected_course'));
     }
 
     public function store(Request $request)

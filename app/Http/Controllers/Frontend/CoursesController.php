@@ -25,7 +25,8 @@ class CoursesController extends Controller
         $title = "Popular Courses";
         $categories = Category::orderBy('name')->get();
         $courses = Course::filter($filters)->where('status', 1)->orderBy('order')->get();
-        return view($this->viewPath.'courses', compact('title', 'categories', 'courses'));
+        $all_courses = Course::where('status', 1)->get();
+        return view($this->viewPath.'courses', compact('title', 'categories', 'courses', 'all_courses'));
     }
 
     /**

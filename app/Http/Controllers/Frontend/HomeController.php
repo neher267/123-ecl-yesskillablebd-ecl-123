@@ -24,8 +24,9 @@ class HomeController extends Controller
     	$title = "Home";
     	$popular_courses = Course::popular();
         $courses = Course::where('status', 1)->paginate(6);
+        $all_courses = Course::where('status', 1)->get();
 
-    	return view($this->viewPath.'index', compact('title', 'popular_courses', 'courses'));
+    	return view($this->viewPath.'index', compact('title', 'popular_courses', 'courses', 'all_courses'));
     }
 
     /**
