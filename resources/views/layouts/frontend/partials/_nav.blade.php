@@ -22,12 +22,12 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#" style="color: #28bba5; font-weight: bold; font-size: 14px;">study in abroad</a>
+                                <!-- <li><a href="#" style="color: #28bba5; font-weight: bold; font-size: 14px;">study in abroad</a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ url('study-in-abrode/usa') }}">USA</a></li>
                                         <li><a href="{{ url('study-in-abrode/germany') }}">Germany</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                  
                                 <li><a href="{{ url('corporate-training') }}">CORPORATE TRAINING</a>
                                     <ul class="sub-menu">
